@@ -2,23 +2,20 @@ import { Product } from "@/types/types"
 import styles from './ProductCard.module.css'
 
 interface Prop {
-    item: Product;
-    onButtonClick: (item: Product) => void;
+    item: Product
 }
-
-export default function ProductCard({ item, onButtonClick }: Prop) {
+export default function ProductCard({ item }: Prop) {
     return (
-        <li className={styles.card}>
+        <li className={styles.li}>
+            <div>
             <img src={item.image} alt={item.title} />
-            <div className={styles.info}>
                 <h4>{item.title}</h4>
-                <span className={styles.category}>Category: <p>{item.category}</p></span>
-                <p className={styles.description}>{item.description}</p>
-                <span className={styles.price}>Price: ${item.price}</span>
-                <span className={styles.rate}>Rate: {item.rating?.rate}</span>
-                <span className={styles.count}>Count: {item.rating?.count}</span>
-                <button onClick={() => onButtonClick(item)} className={styles.button}>Remove</button>
+                <span className={styles.category}>${item.category}</span>
+                <span className={styles.price}><p>Price:</p> ${item.price.toFixed(2)}</span>
+                <p>Count: {item.rating.count}</p>
+                <p>{item.description}</p>
+                <button>Add To Card</button>
             </div>
         </li>
     )
-} 
+}

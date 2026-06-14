@@ -1,72 +1,89 @@
-.card {
+.li {
     display: flex;
     align-items: center;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
 
-    background-color: aliceblue;
-    border: 1px solid aliceblue;
-    border-radius: 20px;
-    padding: 5px 10px;
-    gap: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px #b38e8e59;
+    border: 1px solid #ccc;
+
 }
 
-.card img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
+li:hover {
+    box-shadow: 0px 0px 10px 0px #ad0a0a4d;
+
 }
 
-.info {
+
+.li img {
+    max-width: 70px;
+    width: 100%;
+    height: auto;
+}
+
+.li div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 700px;
-    width: 100%;
-    text-align: center;
-    gap: 5px;
+    gap: 10px;
 }
 
+.li div>h4 {
+    font-size: 15px;
+}
 
-
-.description {
-    font-size: 12px;
+.li div>.category {
+    font-size: 14px;
+    color: #413e3e;
     font-weight: 500;
-    color: rgb(129, 125, 125);
 }
 
-.info span {
-    font-size: 13px;
-    font-weight: 600;
-    
-}
-
-
-.category {
+.price {
     display: flex;
     align-items: center;
     gap: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: tomato;
+
 }
 
-.category p {
-    font-size: 13px;
-    color: rgb(129, 125, 125);
-
+.price p {
+    font-weight: 500;
+    color: #413e3ec2;
 }
 
-.button {
-    cursor: pointer;
-    padding: 5px 10px;
+.li div>p {
+    font-size: 14px;
+    color: #413e3ec2;
+
+    border: 1px dashed #413e3e25;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.li div>button {
     border: none;
     border-radius: 5px;
-    background-color: rgb(129, 125, 125);
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
+    padding: 5px 10px;
+    background-color: tomato;
+    color: #fff;
+    cursor: pointer;
 }
 
-.button:hover {
-    background-color: rgb(129, 125, 125, 0.8);
+
+.li div>button:hover {
+    background-color: #b38e8e;
 }
 
-.button:active {
-    background-color: rgb(129, 125, 125, 0.6);
+.li div>button:active {
+    background-color: #5e5858;
 }

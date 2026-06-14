@@ -1,0 +1,22 @@
+.input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+    box-shadow: 0px 0px 10px 0px #b38e8e59;
+
+}
+
+.input:hover {
+    box-shadow: 0px 0px 10px 0px #5e58584d;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px 0px #e208084d;
+    border: 1px solid #e208084d;
+}
+
+.input::placeholder {
+    color: #bebebe;
+}
