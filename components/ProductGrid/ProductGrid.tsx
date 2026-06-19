@@ -3,7 +3,7 @@ import axios from "axios";
 import { Product } from "@/types/types";
 import styles from "./ProductGrid.module.css"
 import ProductCard from "../ProductCard/ProductCard"
-import { selectState, filterState, productState } from "@/app/state";
+import { selectState, filterState, productState, cartCountState } from "@/app/state";
 import { useAtom } from "jotai";
 
 
@@ -15,6 +15,7 @@ export default function ProductGrid() {
     const [green, setGreen] = useState(false);
     const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
     const [cart, setCart] = useAtom(productState);
+    const [count, setCount] = useAtom(cartCountState);
 
 
 
@@ -37,18 +38,22 @@ export default function ProductGrid() {
     }, [select, filter, green, products])
 
 
-    const onButtonClick = (item: Product) => {
-        const currentCount: number = item.rating?.count || 0;
+const onButtonClick = (item: Product) => {
+    const isExist = cart.find(cartItem => cartItem.id === item.id);
+    
+    const cartItem = cart.find(c => c.id === item.id);
+    const currentStock = item.rating.count - (cartItem?.quantity || 0);
+    if (currentStock <= 0) return; 
 
-        if (currentCount === 0) return;
-
-        setCart([...cart, item]);
-        setProducts(products.map(product =>
-            product.id === item.id
-                ? { ...product, rating: { ...product.rating, count: currentCount - 1 } } : product
+    if (isExist) {
+        setCart(cart.map(
+            cartItem => cartItem.id === item.id ?
+                { ...cartItem, quantity: (cartItem.quantity ?? 0) + 1 } : cartItem
         ))
+    } else {
+        setCart([...cart, { ...item, quantity: 1 }])
     }
-
+}
 
 
     return (

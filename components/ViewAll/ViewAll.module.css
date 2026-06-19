@@ -1,7 +1,9 @@
 .link {
+    position: relative;
     text-decoration: none;
     color: #000;
     font-weight: 600;
+    transition: all .2s;
 }
 
 .link:hover {
@@ -9,5 +11,25 @@
 }
 
 .link:active {
-    color: #000;   
+    color: #000;
+}
+
+.span {
+    position: absolute;
+    top: -45%;
+    right: -14px;
+    z-index: -1;
+    color: #ad0a0a;
+    background-color: #dddddd7e;
+    border-radius: 50%;
+    padding: 1px 6px;
+    font-size: 13px;
+    font-weight: 400;
+    transition: all .2s;
+
+}
+
+.link:hover .span {
+    color: #fff;
+    background-color: #ad0a0a;
 }

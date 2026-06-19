@@ -1,0 +1,60 @@
+.cartLi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.cartLi img {
+    max-width: 50px;
+    width: 100%;
+    height: auto;
+}
+
+.cartLi div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.cartLi div>h4 {
+    font-size: 14px;
+}
+
+.cartLi div>span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: tomato;
+}
+
+.cartLi div>p {
+    font-size: 14px;
+    color: #413e3ec2;
+
+    border: 1px dashed #413e3e25;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.cartLi button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: tomato;
+    color: #fff;
+    border: none;
+}
+
+.cartLi button:hover {
+    background-color: rgba(255, 99, 71, 0.726);
+}
+
+.cartLi button:active {
+    background-color: rgba(255, 99, 71, 0.808);
+}
